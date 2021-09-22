@@ -11,6 +11,7 @@ export default async function dynamicModule({ withConsole = false, prefix = "nux
       pattern: "**/*.vue",
       prefix,
       pathPrefix: false,
+      debug: false
     });
 
     // grab all possible prefixes

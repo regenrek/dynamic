@@ -73,6 +73,14 @@ export default {
     },
 
     componentLoader() {
+     const component = this.$nuxtDynamic.prefixes.includes(
+        toPascalCase(this.name)
+      )
+
+      if (!component && this.$nuxtDynamic.debug) {
+        return 'blok-debug'
+      }
+
       const loaders = ["", ...this.$nuxtDynamic.prefixes]
         .map((prefix) => {
           const name = `Lazy${toPascalCase(prefix)}${toPascalCase(this.name)}`;
