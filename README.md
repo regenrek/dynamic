@@ -6,7 +6,6 @@ This module is a fork of [@blokwise/dynamic](https://github.com/blokwise/dynamic
 Additional feature(s):
  ```
  `debug` option: If enabled `<BlokDebug>` will be loaded instead of a non found component. This enables `@nujek/storyblok` to show a debug hint.
- `prefix`option: default to '' instead of 'nuxt'
  ```
 
 

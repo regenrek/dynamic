@@ -1,7 +1,7 @@
 import { join, resolve } from "path";
 import consola from "consola";
 
-export default async function dynamicModule({ withConsole = false, prefix = "" }) {
+export default async function dynamicModule({ withConsole = false, prefix = "nuxt", debug = false }) {
   const logger = consola.withScope("@blokwise/dynamic");
   const prefixes = [];
 
@@ -37,7 +37,7 @@ export default async function dynamicModule({ withConsole = false, prefix = "" }
 
     this.addPlugin({
       src: resolve(__dirname, "plugins/dynamic.js"),
-      options: { components: asyncComponents, prefixes },
+      options: { components: asyncComponents, prefixes, debug },
     });
 
     if (withConsole) {
