@@ -8,9 +8,6 @@ Additional feature(s):
  `debug` option: If enabled `<BlokDebug>` will be loaded instead of a non found component. This enables `@nujek/storyblok` to show a debug hint.
  ```
 
-<details><summary>Docs</summary>
-
-Read the official [docs](https://dynamic.blokwise.io)
 
 ## Installation
 
@@ -33,6 +30,11 @@ Then, add `@nujek/dynamic` to the `modules` section of `nuxt.config.js`:
   ],
 }
 ```
+
+<details><summary>Original Docs</summary>
+
+Read the official [docs](https://dynamic.blokwise.io)
+
 
 ## Props
 
