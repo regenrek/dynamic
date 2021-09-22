@@ -1,6 +1,6 @@
 {
   "name": "@nujek/dynamic",
-  "version": "1.5.8",
+  "version": "1.5.7",
   "description": "Load components initialized through @nuxt/components dyamically.",
   "repository": "nujek/dynamic",
   "publishConfig": {
@@ -11,7 +11,7 @@
   "scripts": {
     "test": "jest",
     "dev": "nuxt dev test/fixture",
-    "publish": "bumpp patch --commit --push --tag nujek-dynamic@ && pnpm publish"
+    "publish": "bumpp patch --commit --push --tag && pnpm publish"
   },
   "keywords": [
     "nuxtjs",

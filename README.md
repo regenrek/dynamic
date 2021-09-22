@@ -1,25 +1,35 @@
-# @blokwise/dynamic
+# @nujek/dynamic
+
+# ⚠️ Important
+This module is a fork of [@blokwise/dynamic](https://github.com/blokwise/dynamic).
+
+Additional feature(s):
+ ```
+ `debug` option: If enabled `<BlokDebug>` will be loaded instead of a non found component. This enables `@nujek/storyblok` to show a debug hint.
+ ```
+
+<details><summary>Docs</summary>
 
 Read the official [docs](https://dynamic.blokwise.io)
 
 ## Installation
 
-Add `@blokwise/dynamic` dependency to your project:
+Add `@nujek/dynamic` dependency to your project:
 
 ```bash
-yarn add @blokwise/dynamic
+yarn add @nujek/dynamic
 ```
 
 ```bash
-npm install @blokwise/dynamic
+npm install @nujek/dynamic
 ```
 
-Then, add `@blokwise/dynamic` to the `modules` section of `nuxt.config.js`:
+Then, add `@nujek/dynamic` to the `modules` section of `nuxt.config.js`:
 
 ```js[nuxt.config.js]
 {
   modules: [
-    '@blokwise/dynamic'
+    '@nujek/dynamic'
   ],
 }
 ```
@@ -56,7 +66,7 @@ The componentRef prop adds a reference to the child component.
 
 ### Use dynamic component
 
-The dynamic component will be loaded as `NuxtDynamic`. The component will be loaded wheter you pass the name prefix or not. So in the following case it could load a component called `Logo` without prefix or a component called `BlokwiseLogo` which is prefixed with `Blokwise` according to `@nuxt/components` configuration of your project / third party libraries.
+The dynamic component will be loaded as `NuxtDynamic`. The component will be loaded wheter you pass the name prefix or not. So in the following case it could load a component called `Logo` without prefix or a component called `nujekLogo` which is prefixed with `nujek` according to `@nuxt/components` configuration of your project / third party libraries.
 
 ```vue
 <template>
@@ -73,3 +83,5 @@ The dynamic component can be loaded lazily as `LazyNuxtDynamic`.
   <LazyNuxtDynamic component="Logo" />
 </template>
 ```
+
+</details>
