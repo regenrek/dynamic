@@ -10,7 +10,8 @@
   "main": "src/module.js",
   "scripts": {
     "test": "jest",
-    "dev": "nuxt dev test/fixture"
+    "dev": "nuxt dev test/fixture",
+    "publish": "bumpp patch --commit --push --tag nujek-dynamic@ && pnpm publish"
   },
   "keywords": [
     "nuxtjs",
