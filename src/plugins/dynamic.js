@@ -11,6 +11,7 @@ export default (ctx, inject) => {
   }
 
   const prefixes = <%=JSON.stringify(options.prefixes || []) %>
+  const debug = <%=JSON.stringify(options.debug || []) %>
 
-  inject("nuxtDynamic", { loaders, prefixes });
+  inject("nuxtDynamic", { loaders, prefixes, debug });
 };
