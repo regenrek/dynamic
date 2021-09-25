@@ -12,7 +12,7 @@ export default async function dynamicModule({ withConsole = false, prefix = "nux
   this.nuxt.hook("components:dirs", (dirs) => {
     dirs.push({
       path: resolve(runtimeDir, "components"),
-      prefix: '',
+      prefix,
       pathPrefix: false
     });
 
