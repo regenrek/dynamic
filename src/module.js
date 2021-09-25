@@ -1,17 +1,19 @@
-import { join, resolve } from "path";
+import { resolve } from "path";
 import consola from "consola";
 
 export default async function dynamicModule({ withConsole = false, prefix = "nuxt", debug = false }) {
-  const logger = consola.withScope("@blokwise/dynamic");
+  const { nuxt } = this
   const prefixes = [];
+  const logger = consola.withScope("@nujek/dynamic");
+
+  const runtimeDir = resolve(__dirname, 'runtime')
+  nuxt.options.build.transpile.push(runtimeDir, '@nujek/dynamic')
 
   this.nuxt.hook("components:dirs", (dirs) => {
     dirs.push({
-      path: join(__dirname, "components"),
-      pattern: "**/*.vue",
-      prefix,
-      pathPrefix: false,
-      debug: false
+      path: resolve(runtimeDir, "components"),
+      prefix: '',
+      pathPrefix: false
     });
 
     // grab all possible prefixes
