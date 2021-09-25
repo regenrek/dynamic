@@ -45,11 +45,10 @@ export default async function dynamicModule({ withConsole = false, prefix = "nux
     if (withConsole) {
       logger.success({
         message: "auto import for dynamic components ready",
-        additional: `Module @blokwise/dynamic successfully registered.\nReady to auto import ${
-          asyncComponents.length
-        } items as dynamic components lazily (with prefixes: ${prefixes
-          .map((prefix) => `'${prefix}'`)
-          .join(", ")}).\nRead docs: https://dynamic.blokwise.io`,
+        additional: `Module @blokwise/dynamic successfully registered.\nReady to auto import ${asyncComponents.length
+          } items as dynamic components lazily (with prefixes: ${prefixes
+            .map((prefix) => `'${prefix}'`)
+            .join(", ")}).\nRead docs: https://dynamic.blokwise.io`,
         badge: true,
       });
     }
