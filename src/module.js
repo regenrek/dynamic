@@ -38,7 +38,7 @@ export default async function dynamicModule({ withConsole = false, prefix = "nux
       }));
 
     this.addPlugin({
-      src: resolve(__dirname, "plugins/dynamic.js"),
+      src: resolve(runtimeDir, "plugins/dynamic.js"),
       options: { components: asyncComponents, prefixes, debug },
     });
 
