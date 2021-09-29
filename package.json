@@ -1,6 +1,6 @@
 {
   "name": "@nujek/dynamic",
-  "version": "1.5.13",
+  "version": "1.5.14",
   "description": "Load components initialized through @nuxt/components dyamically.",
   "repository": "nujek/dynamic",
   "publishConfig": {
