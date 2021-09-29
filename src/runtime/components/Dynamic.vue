@@ -30,7 +30,7 @@ import {
   hydrateWhenIdle,
   hydrateWhenVisible,
   hydrateNever
-} from "vue-lazy-hydration";
+} from "@nujek/vue-lazy-hydration";
 
 import { toPascalCase } from "./../utils/cases";
 
