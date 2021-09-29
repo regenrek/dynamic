@@ -29,8 +29,9 @@ import {
   hydrateOnInteraction,
   hydrateWhenIdle,
   hydrateWhenVisible,
-  hydrateSsrOnly,
+  hydrateNever
 } from "vue-lazy-hydration";
+
 import { toPascalCase } from "./../utils/cases";
 
 // inspiration for slot handling:
@@ -73,13 +74,18 @@ export default {
     },
 
     componentLoader() {
-     const component = this.$nuxtDynamic.prefixes.includes(
-        toPascalCase(this.name)
-      )
+      const ndLoaders = this.$nuxtDynamic.loaders;
+
+      console.log("loaders", ndLoaders, toPascalCase(`Lazy${this.name}`))
+
+     const component = toPascalCase(`Lazy${this.name}`) in ndLoaders
+
+console.log("comp",component)
 
       if (!component && this.$nuxtDynamic.debug) {
-        return 'blok-debug'
+        return this.$nuxtDynamic.loaders['LazyBlokDebug']
       }
+
 
       const loaders = ["", ...this.$nuxtDynamic.prefixes]
         .map((prefix) => {
@@ -89,6 +95,9 @@ export default {
             : null;
         })
         .filter((loader) => loader);
+
+console.log("shift", loaders.shift() ?? null)
+
       return loaders.shift() ?? null;
     },
 
@@ -103,7 +112,7 @@ export default {
     hydrateOnInteraction: hydrateOnInteraction,
     hydrateWhenIdle: hydrateWhenIdle,
     hydrateWhenVisible: hydrateWhenVisible,
-    hydrateNever: hydrateSsrOnly,
+    hydrateNever: hydrateNever,
   },
 };
 </script>
