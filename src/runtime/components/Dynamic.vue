@@ -75,17 +75,11 @@ export default {
 
     componentLoader() {
       const ndLoaders = this.$nuxtDynamic.loaders;
-
-      console.log("loaders", ndLoaders, toPascalCase(`Lazy${this.name}`))
-
-     const component = toPascalCase(`Lazy${this.name}`) in ndLoaders
-
-console.log("comp",component)
+      const component = toPascalCase(`Lazy${this.name}`) in ndLoaders
 
       if (!component && this.$nuxtDynamic.debug) {
         return this.$nuxtDynamic.loaders['LazyBlokDebug']
       }
-
 
       const loaders = ["", ...this.$nuxtDynamic.prefixes]
         .map((prefix) => {
@@ -96,7 +90,6 @@ console.log("comp",component)
         })
         .filter((loader) => loader);
 
-console.log("shift", loaders.shift() ?? null)
 
       return loaders.shift() ?? null;
     },
