@@ -84,7 +84,6 @@ export default {
         .filter((loader) => loader);
 
       if ((Array.isArray(loaders) && !loaders.length) && this.$nuxtDynamic.debug) {
-        console.log("debug - " + loaders)
         return this.$nuxtDynamic.loaders['LazyBlokDebug']
       }
 
