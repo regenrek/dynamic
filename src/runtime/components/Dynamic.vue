@@ -74,13 +74,6 @@ export default {
     },
 
     componentLoader() {
-      const ndLoaders = this.$nuxtDynamic.loaders;
-      const component = toPascalCase(`Lazy${this.name}`) in ndLoaders
-
-      if (!component && this.$nuxtDynamic.debug) {
-        return this.$nuxtDynamic.loaders['LazyBlokDebug']
-      }
-
       const loaders = ["", ...this.$nuxtDynamic.prefixes]
         .map((prefix) => {
           const name = `Lazy${toPascalCase(prefix)}${toPascalCase(this.name)}`;
@@ -90,6 +83,10 @@ export default {
         })
         .filter((loader) => loader);
 
+      if ((Array.isArray(loaders) && !loaders.length) && this.$nuxtDynamic.debug) {
+        console.log("debug - " + loaders)
+        return this.$nuxtDynamic.loaders['LazyBlokDebug']
+      }
 
       return loaders.shift() ?? null;
     },
